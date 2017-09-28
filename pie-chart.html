@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contry Sales Chart</title>
+    <meta charset='utf-8' />
+    <link rel="icon" type="image/png" href="images/pie-chart.png" />
+
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-colors-windows.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.18/c3.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.18/c3.min.js"></script>
+
+    <script src="https://use.fontawesome.com/19be3155d1.js"></script>
+</head>
+<body>
+    <button id="authorize-button" class="w3-button w3-green w3-hover-text-green w3-hover-white w3-border w3-border-green w3-display-middle w3-round w3-ripple" style="display: none;">Authorize&nbsp;<i class="fa fa-sign-in"></i></button>
+    <div class="w3-win-phone-teal w3-padding w3-container w3-card-2">
+        <a href="bar-chart.html" class="w3-button w3-blue w3-hover-text-blue w3-hover-white w3-border w3-border-blue w3-round w3-ripple">Go to Bar Chart&nbsp;<i class="fa fa-bar-chart"></i></a>
+        <button id="signout-button" class="w3-button w3-red w3-hover-text-red w3-hover-white w3-border w3-border-red w3-right w3-round w3-ripple" style="display: none; z-index: 300;">Sign Out&nbsp;<i class="fa fa-sign-out"></i></button>
+    </div>
+    <div style="clear: both;"></div>
+    <br />
+    <div id="content" class="w3-container">
+        <div class="w3-content w3-card-4 w3-round w3-padding-0">
+            <div class="w3-container w3-win-phone-teal" style="border-radius: 4px 4px 0 0;">
+                <h3><i class="fa fa-bar-chart"></i>&nbsp;Chart</h3>
+            </div>
+            <div class="w3-container w3-padding">
+                <div id="chart"></div>
+            </div>
+        </div>
+        <br />
+        <div class="w3-content w3-card-4 w3-round w3-padding-0">
+            <div class="w3-container w3-win-phone-teal" style="border-radius: 4px 4px 0 0;">
+                <h3><i class="fa fa-table"></i>&nbsp;Data</h3>
+            </div>
+            <div class="w3-container w3-padding">
+                <table class="w3-table w3-striped w3-bordered w3-hoverable">
+                    <thead>
+                        <tr>
+                            <th>Country</th>
+                            <th>Sales</th>
+                        </tr>
+                    </thead>
+                    <tbody id="table-body"></tbody>
+                </table>
+            </div>
+        </div>
+        <br />
+    </div>
+
+    <div id="countryInfo" class="w3-modal">
+        <div class="w3-modal-content w3-card-2">
+            <div class="w3-container w3-win-phone-teal">
+                <h3 id="countryName"></h3>
+                <span onclick="document.getElementById('countryInfo').style.display='none'" class="w3-padding w3-hover-text-black w3-display-topright" style="cursor: pointer;"><i class="fa fa-times"></i></span>
+            </div>
+            <div class="w3-container w3-padding">
+                <div class="w3-row">
+                    <div class="w3-col m4">
+                        <img id="countryFlag" style="width: 100%" />
+                    </div>
+                    <div id="countryDetails" class="w3-col m8 w3-padding">
+                        &nbsp;
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="scripts/pie-chart.js"></script>
+
+    <script async defer src="https://apis.google.com/js/api.js"
+            onload="this.onload=function(){};handleClientLoad()"
+            onreadystatechange="if (this.readyState === 'complete') this.onload()">
+    </script>
+</body>
+</html>
