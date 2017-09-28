@@ -9,7 +9,7 @@ Demo of Google Sheets API and chart.js
 
 1. Download the source code and start a Python server (or any other server) on port `8000`.
 
-   Code for starting Pythin server:
+   Code for starting Python server:
    
    | Python version        | Code                                |
    | --------------------- |------------------------------------:|
